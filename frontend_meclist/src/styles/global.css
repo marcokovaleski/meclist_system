@@ -1,0 +1,75 @@
+/* src/index.css ou src/styles/global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importação de fonte (opcional) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Variáveis CSS globais */
+:root {
+    --color-primary: #D86B06;
+    --color-secondary: #000000;
+    --color-accent: #C1C1C1;
+    --color-background-dark: #666666;
+    --color-background-light: #f5f5f5;
+}
+
+/* Estilos base para todo o site */
+@layer base {
+    html {
+        @apply text-secondary;
+    }
+
+    body {
+        @apply bg-background-light font-sans;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-bold;
+    }
+
+    h1 {
+        @apply text-3xl md:text-4xl;
+    }
+
+    h2 {
+        @apply text-2xl md:text-3xl;
+    }
+
+    h3 {
+        @apply text-xl md:text-2xl;
+    }
+}
+
+/* Componentes reutilizáveis */
+@layer components {
+    .btn {
+        @apply px-4 py-2 rounded font-medium transition-all duration-200;
+    }
+
+    .btn-primary {
+        @apply bg-primary text-white hover:bg-primary/90;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary text-white hover:bg-secondary/90;
+    }
+
+    .btn-outline {
+        @apply border border-primary text-primary hover:bg-primary hover:text-white;
+    }
+
+    .input {
+        @apply px-4 py-2 border border-accent rounded outline-none focus:border-primary focus:ring-1 focus:ring-primary;
+    }
+
+    .card {
+        @apply bg-white p-6 rounded-lg shadow-md;
+    }
+}
