@@ -4,6 +4,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
 }
 
+// Componente Input reutilizável
 export function Input({ label, ...rest }: InputProps) {
     return (
         <div>
