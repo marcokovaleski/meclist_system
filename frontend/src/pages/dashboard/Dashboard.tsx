@@ -1,5 +1,5 @@
-import { Sidebar } from "../components/Sidebar";
-import "../styles/dasboard.css"
+import { Sidebar } from "../../components/Sidebar/Sidebar";
+import "./dasboard.css"
 
 // Componente principal da dashboard
 export default function Dashboard() {

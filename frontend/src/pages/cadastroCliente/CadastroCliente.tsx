@@ -1,6 +1,7 @@
-import { Sidebar } from "../components/Sidebar";
-import "../styles/dasboard.css";
-import "../styles/cadastroCliente.css";
+// Tela de cadastro de clientes com sidebar e ações para listar, filtrar e cadastrar
+import { Sidebar } from "../../components/Sidebar/Sidebar";
+import "../dashboard/dasboard.css";
+import "./cadastroCliente.css";
 import { FaCar, FaPlus } from "react-icons/fa";
 
 export default function CadastroCliente() {
@@ -11,12 +12,11 @@ export default function CadastroCliente() {
             <main className="dashboard-content">
                 <h1 className="page-title">Cadastro de clientes</h1>
 
+                {/* Barra superior com busca e botão de cadastro */}
                 <div className="top-bar">
                     <div className="search-group">
                         <input type="text" placeholder="Buscar cliente" />
-                        <button className="btn buscar-btn">
-                            Buscar
-                        </button>
+                        <button className="btn buscar-btn">Buscar</button>
                     </div>
 
                     <button className="btn cadastrar-btn">
@@ -24,10 +24,12 @@ export default function CadastroCliente() {
                     </button>
                 </div>
 
+                {/* Filtro visual */}
                 <div className="filter">
                     <strong>Filtrar</strong> <span className="filter-icon">🔽</span>
                 </div>
 
+                {/* Tabela de dados dos clientes */}
                 <table className="cliente-table">
                     <thead>
                         <tr>

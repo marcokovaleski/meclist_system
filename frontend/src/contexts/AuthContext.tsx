@@ -1,3 +1,4 @@
+// Contexto de autenticação da aplicação, responsável por login e logout
 import {
     createContext,
     useContext,
@@ -6,46 +7,49 @@ import {
     ReactNode,
 } from "react";
 
-// Define o tipo do usuário
+// Define o tipo de dados do usuário
 interface User {
     id: string;
     username: string;
 }
 
-// Define os métodos e dados disponíveis no contexto
+// Interface com os dados e métodos disponíveis no contexto
 interface AuthContextType {
     user: User | null;
     login: (userData: User) => void;
     logout: () => void;
 }
 
+// Cria o contexto de autenticação
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Tipagem das props do provider
+// Props esperadas pelo Provider
 interface AuthProviderProps {
     children: ReactNode;
 }
 
-// Provider responsável por controlar login e logout
+// Provider do contexto de autenticação
 export function AuthProvider({ children }: AuthProviderProps) {
     const [user, setUser] = useState<User | null>(null);
 
-    // Carrega usuário do localStorage ao iniciar
+    // Carrega dados salvos do usuário no localStorage ao iniciar a aplicação
     useEffect(() => {
         const storedUser = localStorage.getItem("authUser");
         if (storedUser) {
-            setUser(JSON.parse(storedUser)); // Recupera o usuário salvo
+            setUser(JSON.parse(storedUser));
         }
     }, []);
 
+    // Função para logar e salvar dados no localStorage
     const login = (userData: User) => {
         setUser(userData);
-        localStorage.setItem("authUser", JSON.stringify(userData)); // Salva no localStorage
+        localStorage.setItem("authUser", JSON.stringify(userData));
     };
 
+    // Função para logout
     const logout = () => {
         setUser(null);
-        localStorage.removeItem("authUser"); // Remove do localStorage
+        localStorage.removeItem("authUser");
     };
 
     return (
@@ -55,7 +59,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     );
 }
 
-// Hook customizado para consumir o contexto
+// Hook customizado para consumir o contexto com segurança
 export function useAuth() {
     const context = useContext(AuthContext);
     if (!context) {

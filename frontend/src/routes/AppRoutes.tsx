@@ -1,10 +1,11 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Login from "../pages/Login";
-import CadastroMecanico from "../pages/CadastroMecanico"
-import Dashboard from "../pages/Dashboard";
-import CadastroCliente from "../pages/CadastroCliente";
+import Login from "../pages/login/Login";
+import CadastroMecanico from "../pages/cadastroMecanico/CadastroMecanico"
+import Dashboard from "../pages/dashboard/Dashboard";
+import CadastroCliente from "../pages/cadastroCliente/CadastroCliente";
 import { useAuth } from "../contexts/AuthContext";
 
+// Configura as rotas da aplicação, redirecionando conforme o estado de autenticação
 export function AppRoutes() {
     const { user } = useAuth();
 

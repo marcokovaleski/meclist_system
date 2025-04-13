@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Input } from "../components/Input";
-import { Button } from "../components/Button";
-import { useAuth } from "../contexts/AuthContext";
-import "../styles/login.css";
-import logo from "../assets/logo.svg";
+import { Input } from "../../components/Input/Input";
+import { Button } from "../../components/Button/Button";
+import { useAuth } from "../../contexts/AuthContext";
+import "./login.css";
+import logo from "../../assets/logo.svg";
 
 // Tipagem dos dados do formulário
 interface LoginFormData {
