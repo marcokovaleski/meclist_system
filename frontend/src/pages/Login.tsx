@@ -5,6 +5,7 @@ import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/login.css";
+import logo from "../assets/logo.svg";
 
 // Tipagem dos dados do formulário
 interface LoginFormData {
@@ -44,13 +45,13 @@ function Login() {
     return (
         <div className="login-container">
             <div className="login-box">
-                <h1>MEC LIST</h1>
+                <img src={logo} alt="MecList logo" className="logo" />
 
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <Input type="text" placeholder="Username" {...register("username")} />
+                    <Input type="text" placeholder="Username" icon="user" {...register("username")} />
                     {errors.username && <p className="error">{errors.username.message}</p>}
 
-                    <Input type="password" placeholder="Password" {...register("password")} />
+                    <Input type="password" placeholder="Password" icon="lock" {...register("password")} />
                     {errors.password && <p className="error">{errors.password.message}</p>}
 
                     <Button text="LOGIN" type="submit" />

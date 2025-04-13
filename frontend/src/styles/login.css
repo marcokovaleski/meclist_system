@@ -1,85 +1,41 @@
-/* Fundo da página */
 .login-container {
     width: 100vw;
     height: 100vh;
+    background-color: #626365;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #525252;
-    /* Cinza escuro para fundo */
 }
 
-/* Card central do login */
 .login-box {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Título estilizado */
-.login-box h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #D86B06;
-    /* Laranja */
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+.login-box h1 img {
+    width: 200px;
+    margin-bottom: 2rem;
 }
 
-/* Inputs */
-.login-box input {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    border: 2px solid #C1C1C1;
-    /* Cinza */
-    border-radius: 6px;
-    background: transparent;
-    color: #fff;
-    font-size: 1rem;
-}
-
-.login-box input::placeholder {
-    color: #C1C1C1;
-}
-
-/* Botão */
-.login-box button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    background: #000000;
-    /* Preto */
-    color: #D86B06;
-    /* Laranja */
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.login-box button:hover {
-    background: #D86B06;
-    /* Laranja */
-    color: #000000;
-    /* Preto */
-}
-
-/* Mensagem de erro */
-.login-box .error {
-    color: #D86B06;
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-/* Link "Esqueceu a senha?" */
-.login-box .forgot-password {
-    margin-top: 10px;
-    font-size: 0.9rem;
+/* Link de "Esqueceu a senha?" */
+.forgot-password {
+    margin-top: 12px;
+    display: inline-block;
     color: #C1C1C1;
     text-decoration: none;
 }
 
-.login-box .forgot-password:hover {
+.forgot-password:hover {
     color: #D86B06;
+}
+
+.logo {
+    width: 447px;
+    height: auto;
+    display: block;
 }

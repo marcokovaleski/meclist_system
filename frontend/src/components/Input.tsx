@@ -1,14 +1,18 @@
 import { InputHTMLAttributes } from "react";
+import "../styles/input.css";
+import userIcon from "../assets/user-icon.svg";
+import lockIcon from "../assets/lock-icon.svg";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-    label?: string;
+    icon?: "user" | "lock";
 }
 
-// Componente Input reutilizável
-export function Input({ label, ...rest }: InputProps) {
+export function Input({ icon, ...rest }: InputProps) {
+    const iconSrc = icon === "user" ? userIcon : lockIcon;
+
     return (
-        <div>
-            {label && <label>{label}</label>}
+        <div className="input-container">
+            {icon && <img src={iconSrc} alt={`${icon} incon`} />}
             <input {...rest} />
         </div>
     );
