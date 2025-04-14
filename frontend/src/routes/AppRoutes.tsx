@@ -1,6 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "../pages/login/Login";
-import CadastroMecanico from "../pages/cadastroMecanico/CadastroMecanico"
 import Dashboard from "../pages/dashboard/Dashboard";
 import CadastroCliente from "../pages/cadastroCliente/CadastroCliente";
 import { useAuth } from "../contexts/AuthContext";
@@ -18,10 +17,6 @@ export function AppRoutes() {
             <Route
                 path="/dashboard"
                 element={user ? <Dashboard /> : <Navigate to="/" replace />}
-            />
-            <Route
-                path="/cadastro-Mecanico"
-                element={user ? <CadastroMecanico /> : <Navigate to="/" replace />}
             />
             <Route
                 path="/cadastro-cliente"
